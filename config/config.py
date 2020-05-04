@@ -18,10 +18,3 @@ help_methods = dict()
 help_methods['/cmd'] = 'Command prompt (use /cmd -h for mode info)'
 help_methods['/help'] = 'List of all commands1169105152:AAG0XnBUBGFeFr8sU554WDcyYrmKzlBBwSM'
 help_methods['/myid'] = 'Return user id to user'
-
-
-# function is owner exist.
-def function_is_owner_exist():
-    if owner_id is None:
-        return False
-    return True

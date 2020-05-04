@@ -1,8 +1,7 @@
-import os
 import subprocess
-from core import config
 
 
+# class Cmd.
 class Cmd:
     # disallowed shell commands.
     disallowed_commands = [
@@ -16,16 +15,24 @@ class Cmd:
         'sudo',
     ]
 
+    # run shell.
+    # string command
+    # return string
     def run_shell(self, command):
-        if not config.function_is_owner_exist():
-            return "Only owner can run"
-
         cmd_command = self.get_command(command)
         if not self.is_command_allowed(cmd_command):
             return "Not all CRUID commands allowed. Read only operations."
 
-        return 0
+        shell = subprocess.run(
+            cmd_command,
+            shell=True,
+            check=False,
+            capture_output=True)
+        return shell.stdout if shell.stdout else shell.stderr
 
+    # is command allowed
+    # string command
+    # return bool
     def is_command_allowed(self, command):
         result = True
         for value in self.disallowed_commands:
@@ -34,6 +41,8 @@ class Cmd:
 
         return result
 
-
+    # get command
+    # string command
+    # return string
     def get_command(self, command):
         return command.replace('/cmd', '')
