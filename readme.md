@@ -1,7 +1,7 @@
 <h2>Simple telegram bot</h2>
 <h4>Codename: Charles</h4>
 <img src="img/readme_terminator.jpg">
-<h6>version: 0.1</h6>
+<h6>version: 0.2</h6>
 <h6>status: in dev</h6>
 <br>
 <h6>Introduce</h6>
@@ -9,6 +9,10 @@
 Simple telegram bot wich has minimum functionality.
 Main feature is that bot can collect all system info about
 device where he's situated (In future he's get more functions).
+</p>
+<h6>Update v0.2</h6>
+<p>
+Chatbot moved to OpenAi Chat gpt 3.5 turbo
 </p>
 <h6>Installing</h6>
 <p>
