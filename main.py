@@ -22,8 +22,13 @@ def bot_cmd_command(message):
 
 
 @bot.message_handler(commands=["weather"])
-def bot_cmd_command(message):
+def bot_weather(message):
     bot.bot_get_weather(message)
+
+
+@bot.message_handler(commands=["camscreen"])
+def bot_cmd_camshot(message):
+    bot.send_message(message.from_user.id, cmd.make_fast_camshot(message))
 
 
 # function get use id event.
@@ -36,6 +41,11 @@ def bot_get_user_id(message):
 @bot.message_handler(content_types=["text"])
 def event_bot_cont_text(message):
     bot.bot_answer_message(message)
+
+
+@bot.message_handler(commands=["botimg"])
+def event_bot_image_g(message):
+    bot.bot_generate_image(message)
 
 
 # TODO fix photo problems

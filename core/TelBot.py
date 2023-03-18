@@ -23,6 +23,16 @@ class TelBot(telebot.TeleBot):
         )
         self.send_message(message.chat.id, answer.choices[0].message.content, None, None, None, 'MARKDOWN')
 
+    def bot_generate_image(self, message):
+        text = message.text.replace('/cmd', '')
+        response = openai.Image.create(
+            prompt=text,
+            n=1,
+            size="1024x1024"
+        )
+        image_url = response['data'][0]['url']
+        self.send_message(message.chat.id, image_url)
+
     def bot_photo(self, message):
         # print(message.photo)
         self.send_message(message.chat.id, 'we recieve your photo')

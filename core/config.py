@@ -16,7 +16,7 @@ weather_api_key = 'dcf8c0adc643fe01857132c44882fcda'
 
 #openai configs
 oai_org = 'org-CA2B2JDaquhonbY6Gn2YLiqO'
-oai_api_key = "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"
+oai_api_key = "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"
 
 # var help methods list.
 help_methods = dict()
