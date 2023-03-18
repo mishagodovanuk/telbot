@@ -8,6 +8,7 @@ if config.api_key is None:
 # var Telebot.
 bot = TelBot.TelBot(config.api_key)
 
+
 # function help event.
 @bot.message_handler(commands=["help"])
 def bot_help_command(message):
@@ -20,6 +21,11 @@ def bot_cmd_command(message):
     bot.send_message(message.chat.id, cmd.function_cmd_start(message))
 
 
+@bot.message_handler(commands=["weather"])
+def bot_cmd_command(message):
+    bot.bot_get_weather(message)
+
+
 # function get use id event.
 @bot.message_handler(commands=["myid"])
 def bot_get_user_id(message):
@@ -30,6 +36,13 @@ def bot_get_user_id(message):
 @bot.message_handler(content_types=["text"])
 def event_bot_cont_text(message):
     bot.bot_answer_message(message)
+
+
+# TODO fix photo problems
+# function input text event
+@bot.message_handler(func=lambda message: True, content_types=["photo", "new_chat_photo"])
+def event_bot_cont_photo(message):
+    bot.bot_photo(message)
 
 
 if __name__ == '__main__':

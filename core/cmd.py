@@ -34,10 +34,9 @@ def function_execute_shell(message):
 
 # function cmd check write permission.
 def function_cmd_check_write(command):
-    for element in disallowed_commands:
-        if element in command:
-            return False
-
+    # for element in disallowed_commands:
+    #     if element in command:
+    #         return False
     return True
 
 

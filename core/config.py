@@ -11,6 +11,13 @@ api_key = '1169105152:AAG0XnBUBGFeFr8sU554WDcyYrmKzlBBwSM'
 # insert owner id.
 owner_id = '833026088'
 
+#weather_api_key
+weather_api_key = 'dcf8c0adc643fe01857132c44882fcda'
+
+#openai configs
+oai_org = 'org-CA2B2JDaquhonbY6Gn2YLiqO'
+oai_api_key = "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"
+
 # var help methods list.
 help_methods = dict()
 
